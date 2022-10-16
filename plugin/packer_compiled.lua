@@ -79,6 +79,31 @@ _G.packer_plugins = {
     path = "/home/noemi/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["andromeda.vim"] = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/andromeda.vim",
+    url = "https://github.com/safv12/andromeda.vim"
+  },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/ayu-vim",
+    url = "https://github.com/ayu-theme/ayu-vim"
+  },
+  badapple = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/badapple",
+    url = "/home/noemi/.config/nvim/myplugins/badapple"
+  },
+  calculator = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/calculator",
+    url = "/home/noemi/.config/nvim/myplugins/calculator"
+  },
+  catppuccin = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/noemi/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -124,10 +149,20 @@ _G.packer_plugins = {
     path = "/home/noemi/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["jellybeans-nvim"] = {
     loaded = true,
     path = "/home/noemi/.local/share/nvim/site/pack/packer/start/jellybeans-nvim",
     url = "https://github.com/metalelf0/jellybeans-nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["lush.nvim"] = {
     loaded = true,
@@ -149,10 +184,26 @@ _G.packer_plugins = {
     path = "/home/noemi/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/noemi/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["papercolor-theme"] = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/papercolor-theme",
+    url = "https://github.com/NLKNguyen/papercolor-theme"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -179,10 +230,20 @@ _G.packer_plugins = {
     path = "/home/noemi/.local/share/nvim/site/pack/packer/start/vim-be-good",
     url = "https://github.com/ThePrimeagen/vim-be-good"
   },
+  ["vim-fahrenheit"] = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/vim-fahrenheit",
+    url = "https://github.com/fcpg/vim-fahrenheit"
+  },
   ["vim-farout"] = {
     loaded = true,
     path = "/home/noemi/.local/share/nvim/site/pack/packer/start/vim-farout",
     url = "https://github.com/fcpg/vim-farout"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/noemi/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 

@@ -1,7 +1,13 @@
 -- gruvbox, farout, onenord, jellybeans-nvim, default
-local colorscheme = "gruvbox"
-local transparent = true
+
+--[[ required by "catppuccin" themes
+vim.g.catppuccin_flavour = "mocha"
+require("catppuccin").setup()
+]]--
+
 vim.opt.termguicolors = true
+local colorscheme = "customandromeda"
+local transparent = true
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -9,18 +15,23 @@ if not status_ok then
 	return
 end
 
+
+-- theme specific customization
+vim.cmd([[
+let ayucolor="dark"
+
+let g:PaperColor_Theme_Options = {'theme': {'default': {'transparent_background': 0}}}
+]])
+
 vim.cmd([[
 set colorcolumn=
 highlight ColorColumn guibg=#43454a
-
-highlight! link SignColumn LineNr
-
-highlight Pmenu guibg=gray
 ]])
 
 if transparent then
 	vim.cmd([[
+		let g:PaperColor_Theme_Options = {'theme': {'default': {'transparent_background': 1}}}
 		highlight Normal guibg=none
-		highlight NonText guibg=none
+		highlight NonText guifg=bg guibg=none
 	]])
 end

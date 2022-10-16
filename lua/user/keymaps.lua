@@ -19,7 +19,7 @@ keymap("i", "<C-e>", "<ESC>", opts)
 
 -- NORMAL MODE --
 
-keymap("n", "<leader>b", "", opts)
+keymap("n", "<leader>s", ":w<CR>", opts)
 
 -- my snippets
 keymap("n", "<leader>rustmain", ":-1read $HOME/.config/nvim/snippets/.rustmain<CR>o", opts)
@@ -27,6 +27,11 @@ keymap("n", "<leader>cppmain", ":-1read $HOME/.config/nvim/snippets/.cppmain<CR>
 
 -- moving between buffers
 keymap("n", "<leader>n", ":bnext<CR>", opts)
+keymap("n", "<leader>p", ":bprev<CR>", opts)
+
+-- moving between tabs
+keymap("n", "<leader>N", ":tabn<CR>", opts)
+keymap("n", "<leader>P", ":tabp<CR>", opts)
 
 -- resizing
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -35,14 +40,11 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- open netrw file browser on the left with a width of 15
-keymap("n", "<leader>e", ":Lex 14<CR>", opts)
+-- keymap("n", "<leader>e", ":Lex 14<CR>", opts)
+keymap("n", "<leader>e", ":vertical resize 14 | NvimTreeOpen .<CR>", opts)
 
 -- open terminal in split
 keymap("n", "<leader>t", ":split | resize 15 | term<CR>a", opts)
-
--- system clipboard
-keymap("n", "<leader>y", "\"+y", opts)
-keymap("n", "<leader>p", "\"+p", opts)
 
 -- clear highlight searc
 keymap("n", "<leader>h", ":noh<CR>", opts)

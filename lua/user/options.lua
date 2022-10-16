@@ -19,7 +19,7 @@ local options = {
 	shiftwidth = 4,
 	tabstop = 4,
 	expandtab = false,
-	cursorline = false,
+	cursorline = true,
 	wrap = false,
 	wildmenu = true,
 	pumheight = 10,
@@ -44,6 +44,9 @@ vim.g.mapleader = " "
 vim.opt.path:append { "**" }
 vim.opt.tags:append { "./vim/tags" }
 
+-- vim.api.nvim_command('set fillchars=eob: ')
+-- vim.wo.fillchars = 'eob: '
+
 
 
 -- misc
@@ -55,6 +58,8 @@ autocmd FileType haskell setlocal shiftwidth=1 softtabstop=1 expandtab
 autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no
 autocmd FileType markdown setlocal wrap linebreak
 
+set fcs=eob:\ 
+
 set formatoptions-=c
 set formatoptions-=r
 set formatoptions-=o
@@ -62,18 +67,5 @@ set formatoptions-=o
 command! MakeTags !ctags -R .
 
 syntax enable
-filetype plugin on
-
-
-function! GitBranch()
-	let branch_name = system('git branch 2>/dev/null | grep *')
-	return "" . branch_name
-endfunction
-
-set laststatus=2 " status line enabled all the time
-
-set statusline=
-set statusline+=\ %h\ %f\ %m
-set statusline+=\ %p%{'%'}\ %l:%L\ %c
-" set statusline+=\ %{GitBranch()}
+filetype plugin indent on
 ]])

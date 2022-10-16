@@ -47,9 +47,7 @@ return packer.startup(function(use)
 		* options as key = value
 	--]]
 	use { "wbthomason/packer.nvim" --[[ have packer manage itself --]] }
-	use "lunarvim/colorschemes"
 	use "nvim-lua/popup.nvim"
-	use { "ellisonleao/gruvbox.nvim" }
 
 	-- cmp plugins
 	use "hrsh7th/nvim-cmp" -- completion plugin (LSP also works alongside this)
@@ -75,12 +73,39 @@ return packer.startup(function(use)
 	}
 	use "nvim-telescope/telescope-media-files.nvim"
 
-	use "fcpg/vim-farout"
+	-- Harpoon
+	use {
+		"ThePrimeagen/harpoon",
+		requires = {{ "nvim-lua/plenary.nvim" }}
+	}
 
+	-- Misc
+	use "ThePrimeagen/vim-be-good"
+	use "lervag/vimtex"
+	use "~/.config/nvim/myplugins/calculator"
+	use "~/.config/nvim/myplugins/badapple"
+	use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
+	use {
+		'nvim-tree/nvim-tree.lua',
+		requires = {
+			'nvim-tree/nvim-web-devicons', -- optional, for file icons
+		},
+	}
+
+	-- Colorschemes
+	use "fcpg/vim-fahrenheit"
+	use "ayu-theme/ayu-vim"
+	use { "ellisonleao/gruvbox.nvim" }
+	use "lunarvim/colorschemes"
+	use "fcpg/vim-farout"
 	use "rktjmp/lush.nvim"
 	use "metalelf0/jellybeans-nvim"
-
-	use "ThePrimeagen/vim-be-good"
+	use "NLKNguyen/papercolor-theme"
+	use { "catppuccin/nvim", as = "catppuccin" }
+	use "safv12/andromeda.vim"
 
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()
