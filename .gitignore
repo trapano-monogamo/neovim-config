@@ -1,2 +1,4 @@
 **/target
-*.lock
+**/*.lock
+**/*.mp4
+**/frames
