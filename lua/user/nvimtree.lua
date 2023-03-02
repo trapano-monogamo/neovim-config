@@ -10,7 +10,8 @@ end
 nvimtree.setup({
 	sort_by = "case_sensitive",
 	view = {
-		adaptive_size = true,
+		adaptive_size = false,
+		preserve_window_proportions = true,
 		mappings = {
 			list = {
 				{ key = "u", action = "dir_up" },
@@ -21,6 +22,6 @@ nvimtree.setup({
 		group_empty = true,
 	},
 	filters = {
-		dotfiles = true,
+		dotfiles = false,
 	},
 })

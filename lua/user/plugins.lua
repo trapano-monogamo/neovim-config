@@ -80,10 +80,14 @@ return packer.startup(function(use)
 	}
 
 	-- Misc
-	use "ThePrimeagen/vim-be-good"
-	use "lervag/vimtex"
 	use "~/.config/nvim/myplugins/calculator"
 	use "~/.config/nvim/myplugins/badapple"
+	use "nvim-tree/nvim-web-devicons"
+	use {
+		"nvim-treesitter/nvim-treesitter",
+		run = function() require('nvim-treesitter.install').update({with_sync=true}) end,
+	}
+	use "lervag/vimtex"
 	use {
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -94,6 +98,20 @@ return packer.startup(function(use)
 			'nvim-tree/nvim-web-devicons', -- optional, for file icons
 		},
 	}
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
+	use "junegunn/fzf.vim"
+	-- use {
+	-- 	'glepnir/dashboard-nvim',
+	-- 	event = 'VimEnter',
+	-- 	config = function()
+	-- 		require("dashboard").setup {
+	-- 		}
+	-- 	end,
+	-- 	requires = {'nvim-tree/nvim-web-devicons'}
+	-- }
 
 	-- Colorschemes
 	use "fcpg/vim-fahrenheit"
@@ -104,9 +122,15 @@ return packer.startup(function(use)
 	use "rktjmp/lush.nvim"
 	use "metalelf0/jellybeans-nvim"
 	use "NLKNguyen/papercolor-theme"
-	use { "catppuccin/nvim", as = "catppuccin" }
+	use { "catppuccin/nvim", as = "catppuccin" } --   <-- it broke wtf
 	use "safv12/andromeda.vim"
-
+	use "https://gitlab.com/__tpb/monokai-pro.nvim"
+	use "arcticicestudio/nord-vim"
+	-- use "folke/tokyonight.nvim"
+	use "rebelot/kanagawa.nvim"
+	use "EdenEast/nightfox.nvim"
+	use "nyoom-engineering/oxocarbon.nvim"
+	
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()
 	end

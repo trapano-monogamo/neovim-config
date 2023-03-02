@@ -4,10 +4,9 @@ local opts = { noremap = true }
 
 -- not working ffs
 vim.cmd([[
-au FileType rust nnoremap <leader>b :Cargo build<CR>
-au FileType rust nnoremap <leader>r :Cargo run<CR>
-au FileType c nnoremap <leader>b :make<CR>
-au FileType c nnoremap <leader>r :make run<CR>
+au FileType rust nnoremap <leader>rb :Cargo build<CR>
+au FileType rust nnoremap <leader>rr :Cargo run<CR>
+au FileType rust nnoremap <leader>rt :Cargo test<CR>
 ]])
 
 
@@ -22,8 +21,8 @@ keymap("i", "<C-e>", "<ESC>", opts)
 keymap("n", "<leader>s", ":w<CR>", opts)
 
 -- my snippets
-keymap("n", "<leader>rustmain", ":-1read $HOME/.config/nvim/snippets/.rustmain<CR>o", opts)
-keymap("n", "<leader>cppmain", ":-1read $HOME/.config/nvim/snippets/.cppmain<CR>o", opts)
+-- keymap("n", "<leader>rustmain", ":-1read $HOME/.config/nvim/snippets/.rustmain<CR>o", opts)
+-- keymap("n", "<leader>cppmain", ":-1read $HOME/.config/nvim/snippets/.cppmain<CR>o", opts)
 
 -- moving between buffers
 keymap("n", "<leader>n", ":bnext<CR>", opts)
@@ -41,13 +40,11 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- open netrw file browser on the left with a width of 15
 -- keymap("n", "<leader>e", ":Lex 14<CR>", opts)
-keymap("n", "<leader>e", ":vertical resize 14 | NvimTreeOpen .<CR>", opts)
+-- keymap("n", "<leader>e", ":vertical resize 14 | NvimTreeToggle .<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle .<CR>", opts)
 
 -- open terminal in split
 keymap("n", "<leader>t", ":split | resize 15 | term<CR>a", opts)
-
--- clear highlight searc
-keymap("n", "<leader>h", ":noh<CR>", opts)
 
 
 
@@ -58,7 +55,7 @@ keymap("v", "<C-j>", ":m .+1<CR>==gv", opts)
 keymap("v", "<C-k>", ":m .-2<CR>==gv", opts)
 
 -- stop yanking after pasting on top of selection
-keymap("v", "p", '"_dP', opts)
+keymap("v", "<leader>p", '"_dP', opts)
 
 -- stay in visual mode after indenting
 keymap("v", "<", "<gv", opts)
@@ -76,7 +73,8 @@ keymap("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
 
 
 
--- Telescope --
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fm", ":Telescope media_files<CR>", opts)
+-- FILE SEARCHING --
+keymap("n", "<leader>f", ":FZF<CR>", opts)
+-- keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+-- keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+-- keymap("n", "<leader>fm", ":Telescope media_files<CR>", opts)

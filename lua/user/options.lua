@@ -11,7 +11,7 @@ local options = {
 	splitbelow = true,
 	showtabline = 1,
 	number = true,
-	relativenumber = true,
+	relativenumber = false,
 	numberwidth = 2,
 	signcolumn = "yes",
 	smartcase = true,
@@ -19,7 +19,7 @@ local options = {
 	shiftwidth = 4,
 	tabstop = 4,
 	expandtab = false,
-	cursorline = true,
+	cursorline = false,
 	wrap = false,
 	wildmenu = true,
 	pumheight = 10,
@@ -58,8 +58,6 @@ autocmd FileType haskell setlocal shiftwidth=1 softtabstop=1 expandtab
 autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no
 autocmd FileType markdown setlocal wrap linebreak
 
-set fcs=eob:\ 
-
 set formatoptions-=c
 set formatoptions-=r
 set formatoptions-=o
@@ -67,5 +65,5 @@ set formatoptions-=o
 command! MakeTags !ctags -R .
 
 syntax enable
-filetype plugin indent on
+filetype plugin on
 ]])

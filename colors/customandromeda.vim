@@ -35,7 +35,7 @@ let s:bg = ['#23262e', 235]
 let s:bgdark = ['#13161e', 235]
 let s:comments = ['#5f6167', 241]
 let s:white = ['#ffffff', 15]
-let s:invisibles = ['#333844', 15]
+let s:invisibles = ['#434854', 15]
 let s:black = ['#1b1d23', 234]
 let s:cyan = ['#00e8c6', 44 ]
 let s:red = ['#f05010', 203]
@@ -56,7 +56,7 @@ call s:SetHighlight('Conditional', s:purple, '', '')
 call s:SetHighlight('Cursor', s:bg, s:white, '')
 call s:SetHighlight('CursorColumn', '', s:bg, '')
 " call s:SetHighlight('CursorLine', s:white, s:black, '')
-call s:SetHighlight('Directory', s:comments, s:bg, '')
+call s:SetHighlight('Directory', s:comments, '', '')
 call s:SetHighlight('EndOfBuffer', '', '', '')
 call s:SetHighlight('ErrorMsg', s:red, s:bg, 'underline')
 call s:SetHighlight('Float', s:red, '', '')
@@ -77,7 +77,8 @@ call s:SetHighlight('Search', s:bg, s:orange, '')
 call s:SetHighlight('SpecialComment', s:comments, '', '')
 call s:SetHighlight('SpecialKey', s:invisibles, s:bg, '')
 " call s:SetHighlight('StatusLine', s:red, s:comments, '')
-call s:SetHighlight('StatusLine', s:red, s:bgdark, '')
+" call s:SetHighlight('StatusLine', s:red, s:bgdark, '')
+call s:SetHighlight('StatusLine', s:red, s:bg, '')
 call s:SetHighlight('StatusLineNC', s:red, s:comments, '')
 call s:SetHighlight('StorageClass', s:purple, '', '')
 call s:SetHighlight('TabLine', s:comments, '', '')
@@ -137,3 +138,10 @@ highlight LineNr guibg=none
 highlight SignColumn guibg=none
 highlight cursorline guibg=bg
 " highlight EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+
+if g:custom_andromeda_transparent == 1
+	highlight Normal guibg=none
+	highlight NonText guifg=bg guibg=none
+endif
+
+set fcs=eob:\ 
